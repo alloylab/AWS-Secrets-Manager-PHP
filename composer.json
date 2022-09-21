@@ -1,0 +1,31 @@
+{
+    "name": "alloylab/aws-secrets-manager",
+    "type": "library",
+    "description": "aws-secrets-manager in PHP",
+    "keywords": [
+        "aws",
+        "secrets manager"
+    ],
+    "homepage": "https://git.alloylab.com/open-source/aws-secrets-manager-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Trevor Ferre",
+            "email": "trevor@alloylab.com",
+            "homepage": "https://alloylab.com"
+        }
+    ],
+    "require": {
+        "aws/aws-sdk-php": "^3",
+        "phlak/config": "^7",
+        "php": "^8.1"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "AWS_Secrets_Manager\\": "src/"
+        }
+    }
+}
