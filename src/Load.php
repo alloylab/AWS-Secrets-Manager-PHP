@@ -39,17 +39,12 @@ class Load
      */
     public function secrets(array $names): void
     {
-        $time_p = time() + 86400;
-
-        $last_update = $this->file->retrieve('AWSM-Secrets-Updated');
-
-        if($last_update < time()) {
-            foreach ($names as $name) {
-                AWS_Secrets::lookup($name, $this->file, $this->AWS_DEFAULT_REGION, $this->AWS_ACCESS_ID, $this->AWS_SECRET_KEY);
-            }
-
-            $this->file->add('AWSM-Secrets-Expire', $time_p);
+        foreach ($names as $name) {
+            AWS_Secrets::lookup($name, $this->file, $this->AWS_DEFAULT_REGION, $this->AWS_ACCESS_ID, $this->AWS_SECRET_KEY);
         }
+
+        $time_p = time() + 86400;
+        $this->file->add('AWSM-Secrets-Expire', $time_p);
     }
 
     /**
@@ -61,14 +56,9 @@ class Load
      */
     public function db(string $DB_HOST, string $DB_USERNAME): void
     {
+        AWS_DB_IAM::lookup($DB_HOST, $DB_USERNAME, $this->file, $this->AWS_DEFAULT_REGION, $this->AWS_ACCESS_ID, $this->AWS_SECRET_KEY);
+
         $time_p = time() + 900;
-
-        $last_update = $this->file->retrieve('AWSM-DB-IAM-Updated');
-
-        if($last_update < time()) {
-            AWS_DB_IAM::lookup($DB_HOST, $DB_USERNAME, $this->file, $this->AWS_DEFAULT_REGION, $this->AWS_ACCESS_ID, $this->AWS_SECRET_KEY);
-
-            $this->file->add('AWSM-DBToken-Expire', $time_p);
-        }
+        $this->file->add('AWSM-DBToken-Expire', $time_p);
     }
 }
