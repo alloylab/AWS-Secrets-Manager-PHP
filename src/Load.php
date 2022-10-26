@@ -48,7 +48,7 @@ class Load
                 AWS_Secrets::lookup($name, $this->file, $this->AWS_DEFAULT_REGION, $this->AWS_ACCESS_ID, $this->AWS_SECRET_KEY);
             }
 
-            $this->file->add('AWSM-Secrets-Updated', $time_p);
+            $this->file->add('AWSM-Secrets-Expire', $time_p);
         }
     }
 
@@ -68,7 +68,7 @@ class Load
         if($last_update < time()) {
             AWS_DB_IAM::lookup($DB_HOST, $DB_USERNAME, $this->file, $this->AWS_DEFAULT_REGION, $this->AWS_ACCESS_ID, $this->AWS_SECRET_KEY);
 
-            $this->file->add('AWSM-Secrets-Updated', $time_p);
+            $this->file->add('AWSM-DBToken-Expire', $time_p);
         }
     }
 }
