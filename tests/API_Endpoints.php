@@ -8,10 +8,10 @@ use AWSM\File;
 //error_reporting(E_ALL);
 
 require_once('../vendor/autoload.php');
-require_once('../File.php');
-require_once('../Load.php');
-require_once('../AWS_Secrets.php');
-require_once('../AWS_DB_IAM.php');
+require_once('../src/File.php');
+require_once('../src/Load.php');
+require_once('../src/AWS_Secrets.php');
+require_once('../src/AWS_DB_IAM.php');
 
 try {
     $secrets_load = new Load('/var/secrets.json', getenv('AWS_DEFAULT_REGION'), getenv('AWS_ACCESS_ID'), getenv('AWS_SECRET_KEY'));
