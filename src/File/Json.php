@@ -59,6 +59,7 @@ class Json
      * @throws CreateDirectoryException
      * @throws CreateFileException if the file cannot be created.
      * @throws UnavailableMethodException if an unavailable method is accessed.
+     * @throws JsonErrorException
      */
     public function set(array|object $content = []): void
     {
@@ -148,10 +149,13 @@ class Json
      * @param array|object $array
      * @throws CreateDirectoryException
      * @throws CreateFileException if the file cannot be created.
+     * @throws JsonErrorException
      */
     private function saveToJsonFile(array|object $array): void
     {
-        $json = json_encode($array, JSON_PRETTY_PRINT);
+        $json = json_encode($array);
+
+        $this->checkJsonLastError();
 
         $this->createDirIfNotExists();
 
