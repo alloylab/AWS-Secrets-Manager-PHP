@@ -130,7 +130,7 @@ class Json
      */
     private function getFileContents(): array
     {
-        $json = @file_get_contents($this->filepath);
+        $json = @file_get_contents('nette.safe://' . $this->filepath);
 
         if ($json === false) {
             throw new GetFileException($this->filepath);
@@ -153,13 +153,13 @@ class Json
      */
     private function saveToJsonFile(array|object $array): void
     {
-        $json = json_encode($array);
+        $json = json_encode($array, JSON_PRETTY_PRINT);
 
         $this->checkJsonLastError();
 
         $this->createDirIfNotExists();
 
-        if (@file_put_contents($this->filepath, $json, LOCK_EX) === false) {
+        if (@file_put_contents('nette.safe://' . $this->filepath, $json, LOCK_EX) === false) {
             throw new CreateFileException($this->filepath);
         }
     }
