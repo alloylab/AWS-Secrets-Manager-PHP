@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f032967755cc55e53b621eec3edab3e",
+    "content-hash": "f29ceebbe30628d500d3d4e740460ead",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.239.2",
+            "version": "3.240.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "36a8d7fbbc2e1b6f07784f4d381bb647bb7ab8dc"
+                "reference": "2080f747489b2d4ca291dcfb8078db60dbb6c255"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/36a8d7fbbc2e1b6f07784f4d381bb647bb7ab8dc",
-                "reference": "36a8d7fbbc2e1b6f07784f4d381bb647bb7ab8dc",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/2080f747489b2d4ca291dcfb8078db60dbb6c255",
+                "reference": "2080f747489b2d4ca291dcfb8078db60dbb6c255",
                 "shasum": ""
             },
             "require": {
@@ -146,9 +146,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.239.2"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.240.3"
             },
-            "time": "2022-10-20T18:52:48+00:00"
+            "time": "2022-10-26T18:17:08+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -364,16 +364,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.4.1",
+            "version": "2.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "69568e4293f4fa993f3b0e51c9723e1e17c41379"
+                "reference": "67c26b443f348a51926030c83481b85718457d3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/69568e4293f4fa993f3b0e51c9723e1e17c41379",
-                "reference": "69568e4293f4fa993f3b0e51c9723e1e17c41379",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/67c26b443f348a51926030c83481b85718457d3d",
+                "reference": "67c26b443f348a51926030c83481b85718457d3d",
                 "shasum": ""
             },
             "require": {
@@ -463,7 +463,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.4.1"
+                "source": "https://github.com/guzzle/psr7/tree/2.4.3"
             },
             "funding": [
                 {
@@ -479,72 +479,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-28T14:45:39+00:00"
-        },
-        {
-            "name": "josantonius/json",
-            "version": "v2.0.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/josantonius/php-json.git",
-                "reference": "f67bec93e3f9e394cbca0054459c6d33f2cb8f60"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/josantonius/php-json/zipball/f67bec93e3f9e394cbca0054459c6d33f2cb8f60",
-                "reference": "f67bec93e3f9e394cbca0054459c6d33f2cb8f60",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "phpmd/phpmd": "^2.6",
-                "phpunit/phpunit": "^9.5",
-                "squizlabs/php_codesniffer": "^3.7"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Josantonius\\Json\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Josantonius",
-                    "email": "hello@josantonius.dev",
-                    "homepage": "https://josantonius.dev",
-                    "role": "Developer"
-                }
-            ],
-            "description": "PHP simple library for managing Json files.",
-            "keywords": [
-                "array-to-file",
-                "file-to-array",
-                "json",
-                "php"
-            ],
-            "support": {
-                "discussions": "https://github.com/josantonius/php-json/discussions",
-                "issues": "https://github.com/josantonius/php-json/issues",
-                "source": "https://github.com/josantonius/php-json"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/Josantonius",
-                    "type": "github"
-                }
-            ],
-            "time": "2022-09-29T17:28:49+00:00"
+            "time": "2022-10-26T14:07:24+00:00"
         },
         {
             "name": "mtdowling/jmespath.php",
