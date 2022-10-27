@@ -170,9 +170,10 @@ class File
     /**
      * @param string $key
      * @param string $value
-     * @throws UnavailableMethodException
      * @throws CreateDirectoryException
      * @throws CreateFileException
+     * @throws JsonErrorException
+     * @throws UnavailableMethodException
      */
     private function set(string $key, string $value): void
     {
