@@ -159,7 +159,7 @@ class Json
 
         $this->createDirIfNotExists();
 
-        if (@file_put_contents('nette.safe://' . $this->filepath, $json, LOCK_EX) === false) {
+        if (@file_put_contents('nette.safe://' . $this->filepath, $json) === false) {
             throw new CreateFileException($this->filepath);
         }
     }
