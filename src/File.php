@@ -2,13 +2,13 @@
 
 namespace AWSM;
 
+use AWSM\File\Json;
+use AWSM\File\Json\Exceptions\GetFileException;
+use AWSM\File\Json\Exceptions\JsonErrorException;
+use AWSM\File\Json\Exceptions\CreateFileException;
+use AWSM\File\Json\Exceptions\CreateDirectoryException;
+use AWSM\File\Json\Exceptions\UnavailableMethodException;
 use Exception;
-use Josantonius\Json\Exceptions\CreateDirectoryException;
-use Josantonius\Json\Exceptions\CreateFileException;
-use Josantonius\Json\Exceptions\GetFileException;
-use Josantonius\Json\Exceptions\JsonErrorException;
-use Josantonius\Json\Exceptions\UnavailableMethodException;
-use Josantonius\Json\Json;
 
 class File
 {
@@ -35,6 +35,8 @@ class File
     /**
      * @param string $key
      * @param string $value
+     * @throws CreateDirectoryException
+     * @throws CreateFileException
      * @throws GetFileException
      * @throws JsonErrorException
      * @throws UnavailableMethodException
@@ -98,6 +100,8 @@ class File
 
     /**
      * @param string $key
+     * @throws CreateDirectoryException
+     * @throws CreateFileException
      * @throws GetFileException
      * @throws JsonErrorException
      * @throws UnavailableMethodException
@@ -118,6 +122,8 @@ class File
     /**
      * @param string $key
      * @param string $value
+     * @throws CreateDirectoryException
+     * @throws CreateFileException
      * @throws GetFileException
      * @throws JsonErrorException
      * @throws UnavailableMethodException
@@ -140,6 +146,8 @@ class File
     /**
      * @param string $key
      * @param string $value
+     * @throws CreateDirectoryException
+     * @throws CreateFileException
      * @throws GetFileException
      * @throws JsonErrorException
      * @throws UnavailableMethodException
