@@ -44,7 +44,8 @@ class File
     public function add(string $key, string $value): void
     {
         try {
-            $this->merge($key, base64_encode($value));
+            $encoded_value = self::encode($value);
+            $this->merge($key, $encoded_value);
         } catch (GetFileException $e) {
             throw new GetFileException($e);
         } catch (JsonErrorException) {
@@ -64,7 +65,7 @@ class File
     {
         try {
             if(isset($this->config->get()[$key])) {
-                return base64_decode($this->config->get()[$key]);
+                return self::decode($this->config->get()[$key]);
             } else {
                 return '';
             }
@@ -87,7 +88,7 @@ class File
         try {
             $json = new Json($file);
             if(isset($json->get()[$key])) {
-                return base64_decode($json->get()[$key]);
+                return self::decode($json->get()[$key]);
             } else {
                 return '';
             }
@@ -201,5 +202,15 @@ class File
         } catch (JsonErrorException) {
             throw new JsonErrorException();
         }
+    }
+
+    private static function encode($string): string
+    {
+        return base64_encode($string);
+    }
+
+    private static function decode($string): string
+    {
+        return base64_decode($string);
     }
 }
